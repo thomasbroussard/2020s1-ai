@@ -22,6 +22,14 @@ public class TestFileWriteOperations {
 		
 		
 		//print the content of a person as csv
+		//print header
+		ps.println("\"Name\", \"Sex\", \"Age\", \"Height (in)\", \"Weight (lbs)\"");
+		ps.print("\"" + person.getName() + "\", " );
+		ps.print("\"" + person.getSex() +"\", " );
+		ps.print(person.getAge() + ", " );
+		ps.print(person.getHeight().intValue() + ", " );
+		ps.print(person.getWeight().intValue());
+		
 		//ps.println();
 		ps.flush();
 		
