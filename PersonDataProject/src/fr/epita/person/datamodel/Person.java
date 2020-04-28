@@ -4,6 +4,7 @@ public class Person {
 
 	private String name;
 	private String sex;
+	private Integer indexedSex;
 	private Integer age;
 	private Double height;
 	private Double weight;
@@ -39,10 +40,18 @@ public class Person {
 	public void setWeight(Double weight) {
 		this.weight = weight;
 	}
+
+	
+	public Integer getIndexedSex() {
+		return indexedSex;
+	}
+	public void setIndexedSex(Integer indexedSex) {
+		this.indexedSex = indexedSex;
+	}
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", sex=" + sex + ", age=" + age + ", height=" + height + ", weight=" + weight
-				+ "]\n";
+		return "Person [name=" + name + ", sex=" + sex + ", indexedSex=" + indexedSex + ", age=" + age + ", height="
+				+ height + ", weight=" + weight + "]\n";
 	}
 
 	

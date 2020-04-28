@@ -13,7 +13,7 @@ import fr.epita.person.datamodel.Person;
 import fr.epita.person.services.PersonAgeComparator;
 import fr.epita.person.services.PersonCSVHandler;
 
-public class Launcher {
+public class LauncherDataPreparation {
 
 	public static void main(String[] args) throws IOException {
 
@@ -22,6 +22,16 @@ public class Launcher {
 		// averageOperations(persons);
 		//calculateMedianAge(persons);
 		List<Person> groupBySexList = groupBySex(persons);
+		
+		PersonCSVHandler.writeToFile("personsGroupBySex.csv", groupBySexList);
+		
+		
+		persons.sort((p1,p2) -> p1.getAge().compareTo(p2.getAge()));
+		PersonCSVHandler.writeToFile("personsSortedByAge.csv", persons);
+		 
+		
+		
+		
 		
 		
 	}
