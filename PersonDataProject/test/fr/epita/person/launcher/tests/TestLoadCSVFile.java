@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import fr.epita.person.datamodel.Person;
+import fr.epita.person.datamodel.Patient;
 import fr.epita.person.services.PersonCSVHandler;
 
 public class TestLoadCSVFile {
@@ -15,7 +15,7 @@ public class TestLoadCSVFile {
 	private static final String FILE_LOCATION = "persons.csv";
 
 	public static void main(String[] args) throws IOException {
-		List<Person> persons = PersonCSVHandler.readFromFile(FILE_LOCATION);
+		List<Patient> persons = PersonCSVHandler.readFromFile(FILE_LOCATION);
 		System.out.println(persons);
 		
 		

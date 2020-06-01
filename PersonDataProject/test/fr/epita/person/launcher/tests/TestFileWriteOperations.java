@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
-import fr.epita.person.datamodel.Person;
+import fr.epita.person.datamodel.Patient;
 
 public class TestFileWriteOperations {
 	
@@ -13,7 +13,7 @@ public class TestFileWriteOperations {
 		File file = new File("personsOut.csv");
 		FileOutputStream fileOutputStream = new FileOutputStream(file, false);
 		PrintStream ps = new PrintStream(fileOutputStream);
-		Person person = new Person();
+		Patient person = new Patient();
 		person.setAge(30);
 		person.setSex("F");
 		person.setHeight(75.0);

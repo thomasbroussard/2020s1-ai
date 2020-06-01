@@ -1,6 +1,6 @@
 package fr.epita.person.datamodel;
 
-public class Person {
+public class Patient {
 
 	private String name;
 	private String sex;

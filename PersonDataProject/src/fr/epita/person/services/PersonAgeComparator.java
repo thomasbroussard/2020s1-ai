@@ -2,12 +2,12 @@ package fr.epita.person.services;
 
 import java.util.Comparator;
 
-import fr.epita.person.datamodel.Person;
+import fr.epita.person.datamodel.Patient;
 
-public class PersonAgeComparator implements Comparator<Person>{
+public class PersonAgeComparator implements Comparator<Patient>{
 
 	@Override
-	public int compare(Person o1, Person o2) {
+	public int compare(Patient o1, Patient o2) {
 		return o1.getAge().compareTo(o2.getAge());
 	}
 

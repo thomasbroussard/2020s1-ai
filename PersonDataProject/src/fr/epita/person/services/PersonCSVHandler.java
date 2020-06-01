@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import fr.epita.person.datamodel.Person;
+import fr.epita.person.datamodel.Patient;
 
 public class PersonCSVHandler {
 
-	public static List<Person> readFromFile(String fileLocation) throws IOException {
+	public static List<Patient> readFromFile(String fileLocation) throws IOException {
 
 		// This is the same as Files.readAllLines() method.
 //		FileInputStream fileInputStream = new FileInputStream(new File(fileLocation));
@@ -28,13 +28,13 @@ public class PersonCSVHandler {
 
 		List<String> rawPersons = Files.readAllLines(new File(fileLocation).toPath());
 
-		List<Person> persons = new ArrayList<Person>();
+		List<Patient> persons = new ArrayList<Patient>();
 
 		rawPersons.remove(0);
 		for (String line : rawPersons) {
 
 			String[] parts = line.split(",");
-			Person person = new Person();
+			Patient person = new Patient();
 			person.setName(parts[0].replaceAll("\"", "").strip());
 			person.setSex(parts[1].replaceAll("\"", "").strip());
 			person.setAge(Integer.valueOf(parts[2].strip()));
@@ -46,12 +46,12 @@ public class PersonCSVHandler {
 
 	}
 
-	public static void writeToFile(String fileLocation, List<Person> personsToWrite) throws IOException {
+	public static void writeToFile(String fileLocation, List<Patient> personsToWrite) throws IOException {
 
 		FileOutputStream fileOutputStream = new FileOutputStream(new File(fileLocation), false);
 		PrintStream ps = new PrintStream(fileOutputStream);
 		ps.println("\"Name\", \"Sex\", \"Age\", \"Height (in)\", \"Weight (lbs)\"");
-		for (Person person : personsToWrite) {
+		for (Patient person : personsToWrite) {
 			
 			//print the content of a person as csv
 			//print header

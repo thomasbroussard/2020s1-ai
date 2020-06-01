@@ -9,16 +9,16 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import fr.epita.person.datamodel.Person;
+import fr.epita.person.datamodel.Patient;
 import fr.epita.person.services.PersonCSVHandler;
 
 public class LauncherIndexer {
 
 	public static void main(String[] args) throws IOException {
-		List<Person> readFromFile = PersonCSVHandler.readFromFile("persons.csv");
+		List<Patient> readFromFile = PersonCSVHandler.readFromFile("persons.csv");
 		Map<String, Integer> index = new LinkedHashMap<>();
 
-		List<Person> indexedList = readFromFile.stream().peek(p -> {
+		List<Patient> indexedList = readFromFile.stream().peek(p -> {
 			String sex = p.getSex();
 			Integer currentValue = index.get(sex);
 			if (currentValue == null) {
